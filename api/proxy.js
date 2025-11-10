@@ -22,7 +22,7 @@ module.exports = async (req, res) => {
 
     res.statusCode = upstream.status;
     upstream.headers.forEach((v, k) => {
-      if (!["transfer-encoding", "connection", "keep-alive"].includes(k.toLowerCase())) {
+      if (!["transfer-encoding","connection","keep-alive"].includes(k.toLowerCase())) {
         res.setHeader(k, v);
       }
     });
